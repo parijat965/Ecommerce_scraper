@@ -15,10 +15,8 @@ const CategoryDropdown = ({ onSelectCategory, width = "100%" }) => {
   return (
     <Box width={width}>
       {" "}
-      {/* ✅ Apply width properly */}
       <FormControl fullWidth>
         {" "}
-        {/* ✅ Ensures proper responsiveness */}
         <InputLabel>Select a Category</InputLabel>
         <Select
           onChange={(e) => onSelectCategory(e.target.value)}

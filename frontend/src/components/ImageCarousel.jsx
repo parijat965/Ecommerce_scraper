@@ -15,7 +15,6 @@ const ImageCarousel = ({ images }) => {
   return (
     <Box position="relative" sx={{ height: "140px", marginBottom: "5px" }}>
       {" "}
-      {/* ✅ Reduced Height & Gap */}
       <SwipeableViews index={activeStep} onChangeIndex={setActiveStep}>
         {images.map((image, index) => (
           <div key={index}>
@@ -31,7 +30,6 @@ const ImageCarousel = ({ images }) => {
           </div>
         ))}
       </SwipeableViews>
-      {/* Left Navigation Button */}
       <IconButton
         sx={{
           position: "absolute",
@@ -45,7 +43,6 @@ const ImageCarousel = ({ images }) => {
       >
         <KeyboardArrowLeft sx={{ color: "white" }} />
       </IconButton>
-      {/* Right Navigation Button */}
       <IconButton
         sx={{
           position: "absolute",
@@ -59,7 +56,6 @@ const ImageCarousel = ({ images }) => {
       >
         <KeyboardArrowRight sx={{ color: "white" }} />
       </IconButton>
-      {/* Step Indicator */}
       <MobileStepper
         steps={images.length}
         position="static"

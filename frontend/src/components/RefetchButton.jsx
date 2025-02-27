@@ -45,7 +45,6 @@ const RefetchButton = ({ productId }) => {
         )}
       </IconButton>
 
-      {/* ✅ Snackbar Alert */}
       <Snackbar
         open={alert.open}
         autoHideDuration={3000}

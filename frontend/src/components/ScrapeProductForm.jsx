@@ -6,6 +6,7 @@ const ScrapeProductForm = () => {
   const [productUrl, setProductUrl] = useState("");
   const [message, setMessage] = useState({ text: "", type: "" });
   const [open, setOpen] = useState(false);
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const handleScrape = () => {
     if (!productUrl.trim()) {
@@ -18,7 +19,7 @@ const ScrapeProductForm = () => {
     }
 
     axios
-      .post("http://localhost:3000/api/products", { url: productUrl })
+      .post(`${API_URL}/products`, { url: productUrl })
       .then((res) => {
         setMessage({ text: res.data.message, type: "success" });
         setProductUrl("");
@@ -59,7 +60,8 @@ const ScrapeProductForm = () => {
         autoHideDuration={3000}
         onClose={() => setOpen(false)}
       >
-        <Alert variant="filled"
+        <Alert
+          variant="filled"
           onClose={() => setOpen(false)}
           severity={message.type}
           sx={{ width: "100%" }}

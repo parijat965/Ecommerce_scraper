@@ -97,9 +97,27 @@ cd frontend
 Install Dependencies
 npm install
 
+Modify `.env` file to handle backend rails server port
+
 Start React Development Server
 npm run dev
 
+```
+
+---
+
+## **🛠 Running Tests (RSpec)**
+
+This project includes **RSpec tests** for models and controllers to ensure correctness.
+
+### **🔹 Install RSpec (If Not Installed)**
+
+RSpec should already be installed, but if not, run:
+
+```sh
+bundle add rspec-rails --group "development, test"
+rails generate rspec:install
+bundle exec rspec
 ```
 
 ### ✅ Now project should now be running at http://localhost:5173! 🎉

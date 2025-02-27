@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe ScrapeProductJob, type: :job do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:url) { "https://www.flipkart.com/sample-product" }
+
+  it "enqueues a job" do
+    ActiveJob::Base.queue_adapter = :test # ✅ Ensure jobs run in test mode
+
+    expect {
+      ScrapeProductJob.perform_later(url)
+    }.to have_enqueued_job(ScrapeProductJob).with(url)
+  end
 end
